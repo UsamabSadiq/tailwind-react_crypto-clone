@@ -4,7 +4,9 @@
 
 .leftSide{
     font-family: 'Roboto Flex', sans-serif;
+    /* border: 2px solid black; */
 }
 .rightSide{
     font-family: 'Roboto Flex', sans-serif;
+    /* border: 2px solid green; */
 }
