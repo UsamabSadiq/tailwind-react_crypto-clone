@@ -1,49 +1,55 @@
-import React from 'react'
+import React, { useState } from 'react'
 import navIcon from '../images/icon-1.png'
+import { IoClose } from "react-icons/io5";
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaBars } from "react-icons/fa";
 
 const Navbar = () => {
+    const [open, setOpen] = useState(false)
     const listItems = [
         { name: 'Home', link: '/' },
         { name: 'About', link: '/about' },
+        { name: 'Service', link: '/service' },
         { name: 'Contact', link: '/contact' },
-        { name: 'Help', link: '/help' }
+        { name: 'Roadmap', link: '/roadmap' }
 
     ]
+
+    // const navOpenHandler = () ={
+
+    // }
     return (
         <>
+            <div className='shadow-lg'>
+                <div className="container grid grid-cols-1 mx-auto px-3">
+                    <div className='leftSide flex items-center border-2 border-green-500'>
 
-            <nav class="bg-white border-gray-200 dark:bg-gray-900">
-                <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                    <a href="https://flowbite.com/" class="flex items-center">
-                        <img src={navIcon} class="h-8 mr-3" alt="Logo" />
-                        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                    </a>
-                    <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                        <span class="sr-only">Open main menu</span>
-                        <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path></svg>
-                    </button>
-                    <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                        <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                            <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Services</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Pricing</a>
-                            </li>
-                            <li>
-                                <a href="#" class="block py-2 pl-3 pr-4 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</a>
-                            </li>
-                        </ul>
+                        <img src={navIcon} alt="logo" />
+
+                        <span className='text-3xl font-bold text-blue-300 '>
+                            CryptoCoin
+                        </span>
                     </div>
+
+                    <div onClick={() => setOpen(!open)} className='absolute top-5 right-4 border-2 border-black text-lg rounded p-1  lg:hidden'>
+                        {open ? <IoClose /> : <FaBars />}
+                    </div>
+                    <ul className={`${open ? 'rightSide flex flex-col justify-between items-end pr-3  border-2 border-blue-800' : 'hidden'} `}>
+                        {
+                            listItems.map((link) => (
+
+                                <li key={link.link} className='pb-4' ><a href={link.link}>{link.name}</a></li>
+                            ))
+                        }
+
+                        <FaFacebookF />
+                        <FaTwitter />
+                        < FaLinkedinIn />
+
+                    </ul>
+
+
                 </div>
-            </nav>
+            </div>
 
         </>
     )
