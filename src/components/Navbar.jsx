@@ -20,8 +20,8 @@ const Navbar = () => {
     return (
         <>
             <div className='shadow-lg'>
-                <div className="container grid grid-cols-1 mx-auto px-3">
-                    <div className='leftSide flex items-center border-2 border-green-500'>
+                <div className="container grid grid-cols-1 lg:grid-cols-2 mx-auto px-3">
+                    <div className='leftSide flex items-center'>
 
                         <img src={navIcon} alt="logo" />
 
@@ -30,24 +30,26 @@ const Navbar = () => {
                         </span>
                     </div>
 
-                    <div onClick={() => setOpen(!open)} className='absolute top-5 right-4 border-2 border-black text-lg rounded p-1  lg:hidden'>
+                    <div onClick={() => setOpen(!open)} className={`absolute top-5 right-9 border-2 border-black text-lg rounded p-1  lg:hidden`}>
                         {open ? <IoClose /> : <FaBars />}
                     </div>
-                    <ul className={`${open ? 'rightSide flex flex-col justify-between items-end pr-3  border-2 border-blue-800' : 'hidden'} `}>
+
+
+                    <ul className={` 'rightSide lg:flex lg:justify-around lg:items-center pr-3' ${open ? 'rightSide flex flex-col justify-between items-end pr-3' : 'hidden'} `}>
                         {
                             listItems.map((link) => (
 
-                                <li key={link.link} className='pb-4' ><a href={link.link}>{link.name}</a></li>
+                                <li key={link.link} className={open ? 'pb-3' : ''} ><a href={link.link}>{link.name}</a></li>
                             ))
                         }
-
-                        <FaFacebookF />
-                        <FaTwitter />
-                        < FaLinkedinIn />
-
+                        <li className='flex gap-3'>
+                            <FaFacebookF className='text-xl' />
+                            <FaTwitter className='text-xl' />
+                            < FaLinkedinIn className='text-xl' />
+                        </li>
                     </ul>
 
-
+                    {/* 'rightSide lg:flex lg:justify-around lg:items-center pr-3' */}
                 </div>
             </div>
 
