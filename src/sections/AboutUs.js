@@ -8,7 +8,7 @@ const AboutUs = () => {
         <>
             <div className=' container mx-auto  lg:mx-40 pt-24'>
                 <div className='grid grid-cols-1 lg:grid-cols-2 '>
-                    <div className='p-4 mb-8 '>
+                    <div className='px-10 mb-8 '>
                         <img src={coin} alt='silver coin' />
                     </div>
                     <div className='text-container px-14 mt-6'>

@@ -18,14 +18,14 @@ const Counter = () => {
             text: 'Monthly Transactions'
         },
         {
-            image: icon1,
+            image: icon3,
             numericVal: 334455,
             text: 'Total Transactions'
         }
     ]
     return (
         <>
-            <div className='main border-2 border-black lg:container lg:mx-auto mt-20'>
+            <div className='main container mx-auto mt-20 mb-10'>
                 <div className=' bg-[#F2F8FE] lg:mx-40 my-12 py-12 shadow-lg '>
                     <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
                         {
