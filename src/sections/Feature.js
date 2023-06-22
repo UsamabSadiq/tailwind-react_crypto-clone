@@ -38,11 +38,11 @@ const Feature = () => {
 
     return (
         <>
-            <div className='main px-10 py-5 '>
+            <div className='container mx-auto px-10 py-5 '>
                 <h2 className='text-center text-3xl mb-2 font-semibold'>Why Us!</h2>
-                <p className='text-[#16D5FF] text-xl text-center mb-12'>The Best In The crypto Industry</p>
+                <p className='text-[#16D5FF] text-xl text-center mb-10'>The Best In The crypto Industry</p>
 
-                <div className='container mx-auto grid grid-cols-3 gap-12  py-3'>
+                <div className='container mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12  py-3'>
 
                     {data.map((item, index) => {
                         return (
@@ -50,8 +50,8 @@ const Feature = () => {
                             <div key={index} className='flex px-7 items-center'>
                                 <img src={item.image} alt='icon-3' className='h-16 w-16' />
                                 <div className='pl-6'>
-                                    <h4 className='text-xl mb-4'>{item.text}</h4>
-                                    <p className='text-base'> Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo </p>
+                                    <h4 className='text-xl font-semibold mb-4'>{item.text}</h4>
+                                    <p className='text-base text-[#999999]'> Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo </p>
                                 </div>
                             </div>
                         )

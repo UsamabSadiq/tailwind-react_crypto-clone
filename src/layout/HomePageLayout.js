@@ -3,6 +3,7 @@ import HeroSection from '../sections/HeroSection'
 import AboutUs from '../sections/AboutUs'
 import Counter from '../sections/Counter'
 import Feature from '../sections/Feature'
+import Services from '../sections/Services'
 
 
 const HomePageLayout = () => {
@@ -15,6 +16,7 @@ const HomePageLayout = () => {
       <AboutUs />
       <Counter />
       <Feature />
+      <Services />
     </>
   )
 }
